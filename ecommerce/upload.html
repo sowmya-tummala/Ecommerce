@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Portfolio</title>
+  <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+  <header>
+    <h1>Upload Portfolio</h1>
+  </header>
+
+  <main>
+    <section class="upload-form">
+      <h2>Upload Photographs and Videos</h2>
+      <form id="portfolio-upload-form">
+        <label for="before-image">Before Photo/Video:</label>
+        <input type="file" id="before-image" accept="image/*, video/*">
+        <div id="before-preview"></div>
+        
+        <label for="after-image">After Photo/Video:</label>
+        <input type="file" id="after-image" accept="image/*, video/*">
+        <div id="after-preview"></div>
+        
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Upload Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="upload.js"></script>
+</body>
+</html>

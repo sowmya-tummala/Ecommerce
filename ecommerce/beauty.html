@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Services</title>
+  <link rel="stylesheet" href="beauty.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">UrbanClap</div>
+      <ul class="nav-links">
+        <li><a href="beauty.html">Beauty Services</a></li>
+      	<li><a href="clean.html">Cleaning Services</a></li>
+      	<li><a href="homerepair.html">Home Repair Services</a></li>
+      	<li><a href="fitness.html">Fitness Services</a></li>
+      </ul>
+      <div class="right-section">
+        <form class="search-form">
+          <input type="text" placeholder="Search for services...">
+          <button type="submit">Search</button>
+        </form>
+        <div class="login-register">
+          <a href="login.html">Login</a> / <a href="login.html">Register</a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="services-list">
+      <h2>Available Beauty Services</h2>
+      <ul>
+        <li>
+          <h3>Haircut and Styling</h3><br>
+	  <img src="haircut.jpg"  alt="Service 1"><br>
+          <p>Description: Haircut and professional styling.</p><br>
+          <p>Estimated Time: 1 hour</p><br>
+          <p>Price: 400Rs</p><br>
+	  <a href="booking.html"><button class="button add-to-cart">Add</button></a><br><br>
+
+<div class="container mt-5">
+        <p>Please rate the product and leave a review:</p>
+        <div class="rating-container">
+            <div class="rating-stars">
+                <span class="rating-star" onclick="setRating(1)">★</span>
+                <span class="rating-star" onclick="setRating(2)">★</span>
+                <span class="rating-star" onclick="setRating(3)">★</span>
+                <span class="rating-star" onclick="setRating(4)">★</span>
+                <span class="rating-star" onclick="setRating(5)">★</span>
+            </div>
+        </div>
+        <div class="review-container">
+            <textarea class="review-textarea" placeholder="Write your review here"></textarea>
+            <button class="submit-button" onclick="submitReview()">Submit Review</button>
+        </div>
+    </div>
+
+
+
+<div class="reviews-container">
+        <div class="review">
+            <div class="review-header">
+                <span class="review-rating">★★★★☆</span>
+                <span class="review-author">User123</span>
+            </div>
+            <p class="review-content">This product exceeded my expectations! It's a great value for the price.</p>
+        </div>
+
+        <div class="review">
+            <div class="review-header">
+                <span class="review-rating">★★★☆☆</span>
+                <span class="review-author">Customer456</span>
+            </div>
+            <p class="review-content">The quality is good, but the delivery took longer than expected.</p>
+        </div>
+
+        <div class="review">
+            <div class="review-header">
+                <span class="review-rating">★★★★★</span>
+                <span class="review-author">HappyBuyer789</span>
+            </div>
+            <p class="review-content">I'm extremely satisfied with my purchase! The product arrived on time and looks fantastic.</p>
+        </div>
+    </div>
+    <script>
+        let selectedRating = 0;
+
+        function setRating(rating) {
+            selectedRating = rating;
+            const stars = document.querySelectorAll('.rating-star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function submitReview() {
+            const reviewText = document.querySelector('.review-textarea').value;
+            if (selectedRating === 0 || reviewText.trim() === '') {
+                alert('Please provide a rating and review text.');
+            } else {
+                // Here you can process the submitted rating and review
+                alert('Review submitted!\nRating: ' + selectedRating + '\nReview: ' + reviewText);
+                // You can reset the form or perform other actions here
+            }
+        }
+    </script>
+
+
+
+         
+        </li>
+        <li>
+          
+          <h3>Manicure and Pedicure</h3><br>
+	  <img src="manpad.jpg" alt="Service 2"><br>
+          <p>Description: Nail care and pampering.</p><br>
+          <p>Estimated Time: 1.5 hours</p><br>
+          <p>Price: 400Rs</p><br>
+ 	  <a href="booking.html"><button class="button add-to-cart">Add</button></a>
+
+        </li>
+        <li>
+          
+          <h3>Facial Treatments</h3><br>
+	  <img src="facial.jpg" alt="Service 3"><br>
+          <p>Description: Skin rejuvenation and cleansing.</p><br>
+          <p>Estimated Time: 1 hour</p><br>
+          <p>Price: 600Rs</p><br>
+ 	  <a href="booking.html"><button class="button add-to-cart">Add</button></a>
+
+        </li>
+        <li>
+          
+          <h3>Makeup Application</h3><br>
+	  <img src="makeup.jpg" alt="Service 4"><br>
+          <p>Description: Professional makeup for any occasion.</p><br>
+          <p>Estimated Time: 1.5 hours</p><br>
+          <p>Price: 700Rs</p><br>
+ 	  <a href="booking.html"><button class="button add-to-cart">Add</button></a>
+
+        </li>
+        <li>
+          
+          <h3>Waxing and Hair Removal</h3><br>
+	  <img src="waxing.jpg" alt="Service 5"><br>
+          <p>Description: Hair removal for various areas.</p><br>
+          <p>Estimated Time: 1 hour</p><br>
+          <p>Price: 300Rs</p><br>
+ 	  <a href="booking.html"><button class="button add-to-cart">Add</button></a>
+
+        </li>
+        <!-- Add more service items here -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Beauty Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>

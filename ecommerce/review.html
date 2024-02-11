@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Rating & Reviews</title>
+    <style>
+        .rating-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .rating-stars {
+            display: flex;
+        }
+
+        .rating-star {
+            font-size: 24px;
+            color: #d3d3d3;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .rating-star.active {
+            color: #ffc107;
+        }
+
+        .review-container {
+            margin-top: 20px;
+        }
+
+        .review-textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <p>Please rate the product and leave a review:</p>
+        <div class="rating-container">
+            <div class="rating-stars">
+                <span class="rating-star" onclick="setRating(1)">★</span>
+                <span class="rating-star" onclick="setRating(2)">★</span>
+                <span class="rating-star" onclick="setRating(3)">★</span>
+                <span class="rating-star" onclick="setRating(4)">★</span>
+                <span class="rating-star" onclick="setRating(5)">★</span>
+            </div>
+        </div>
+        <div class="review-container">
+            <textarea class="review-textarea" placeholder="Write your review here"></textarea>
+            <button class="submit-button" onclick="submitReview()">Submit Review</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedRating = 0;
+
+        function setRating(rating) {
+            selectedRating = rating;
+            const stars = document.querySelectorAll('.rating-star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function submitReview() {
+            const reviewText = document.querySelector('.review-textarea').value;
+            if (selectedRating === 0 || reviewText.trim() === '') {
+                alert('Please provide a rating and review text.');
+            } else {
+                // Here you can process the submitted rating and review
+                alert('Review submitted!\nRating: ' + selectedRating + '\nReview: ' + reviewText);
+                // You can reset the form or perform other actions here
+            }
+        }
+    </script>
+</body>
+</html>
